@@ -55,7 +55,7 @@ app = FastAPI(title="ClearML Serving Service", version=__version__, description=
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
