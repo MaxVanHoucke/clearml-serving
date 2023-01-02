@@ -11,6 +11,8 @@ RUN pip3 install --no-cache-dir clearml-serving
 COPY clearml_serving /root/clearml/clearml_serving
 
 RUN pip3 install --no-cache-dir -r /root/clearml/clearml_serving/serving/requirements.txt
+RUN pip3 install --no-cache-dir boto3
+RUN pip3 install --no-cache-dir --upgrade scikit-learn==1.1.3
 
 # default serving port
 EXPOSE 8080

@@ -18,6 +18,20 @@
 </div>
 
 
+# Forked
+**Changes**
+- AWS environment variables to the inference container through the compose file
+- Boto3 package and specific scikit-learn version to the  inference Dockerfile
+- CORS to the FastAPI
+
+**TODO**
+- Check if dynamic task id of the model can be retrieved
+
+
+
+**--- End Forked Section ---**
+
+
 **`clearml-serving`** is a command line utility for model deployment and orchestration.  
 It enables model deployment including serving and preprocessing code to a Kubernetes cluster or custom container based solution.
 

@@ -2,6 +2,7 @@ import os
 from multiprocessing import Lock
 import gzip
 
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, Request, Response, APIRouter, HTTPException
 from fastapi.routing import APIRoute
 
@@ -50,6 +51,14 @@ except (ValueError, TypeError):
 
 # start FastAPI app
 app = FastAPI(title="ClearML Serving Service", version=__version__, description="ClearML Service Service router")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.on_event("startup")
